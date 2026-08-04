@@ -1,0 +1,392 @@
+/* 모든 요소의 크기 계산 방식 통일 */
+* {
+    box-sizing: border-box;
+}
+
+/* 부드러운 화면 이동 설정 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 페이지 기본 설정 */
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* -- Header -- */
+.header {
+    position: fixed;
+    width: 100%;
+    min-width: 960px;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+/* Header 내부(로고, 오른쪽 메뉴) */
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 24px 40px;
+    margin: 0 auto;
+}
+/* 오른쪽 메뉴 전체 (header_right) */
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+/* 메뉴 목록 */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/*메뉴 링크 */
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Anton", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav a:hover {
+    color: #baff00;
+}
+/*문의하기 버튼 */
+.contact_btn {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    padding: 16px 48px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.contact_btn:hover {
+    background-color: #fff;
+    color: #baff00;
+}
+
+/* -- Main -- */
+/* -- Home(Hero) 섹션 -- */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 960px;
+    min-height: 100vh;
+    padding: 80px 20px 40px;
+}
+/* Hero 키링 이미지 */
+.hero_img {
+    width: clamp(580px, 50vw, 860px);
+    height: auto;
+    object-fit: contain;
+}
+
+/* -- Home(About) 섹션 -- */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 180px 20px;
+}
+/* About(소개 문장) */
+.about_text {
+    text-align: center;
+    max-width: 1100px;
+}
+.about_text p {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.6;
+    word-break: keep-all;                                /* 한국어 줄바꿈 문제 해결 */
+    margin: 0 0 12px;
+}
+.about_text strong {
+    font-weight: 700;
+}
+/* About(수치 영역) */
+.about_stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 120px;
+}
+/* About(각각의 수치 항목) */
+.about_stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* SINCE와 PROJECT */
+.about_label {
+    color: rgba(255, 255, 255, 0.45);
+    font-family: "Anton", sans-serif;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+/* SINCE 2001과 PROJECT 1000+ */
+.about_number {
+    color: #ffffff;
+    font-size: 76px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+/* 가운데 세로 구분선 */
+.about_divider {
+    width: 1px;
+    height: 128px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* -- Projects와 Contact 임시 영역 -- */
+.placeholder-section {
+    min-width: 70vh;
+    padding: 160px 20px;
+    text-align: center;
+}
+.placeholder-section p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Projects 섹션 */
+.projects {
+    padding: 180px 40px;
+}
+.project_heading {
+    text-align: center;
+    margin-bottom: 64px;
+}
+.project_heading h2 {
+    font-family: "Anton", sans-serif;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+}
+.project_heading p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    margin: 20px 0 0;
+}
+/* project 목록 */
+.project_list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* 각각의 Project 카드 */
+.project_card {
+    display: flex;
+    min-height: 360px;
+    background-color: #1b1b1b;
+    border-radius: 12px;
+    overflow: hidden;
+}
+/* Project 설명 */
+.project_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 40px;
+}
+.project_content h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 24px;
+}
+.project_content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+    word-break: keep-all;                                /* 한국어 줄바꿈 문제 해결 */
+}
+/* Project 부제목 영역 */
+.project_subtitle {
+    margin-top: 40px;
+}
+.project_subtitle h4 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+/* Project 태그 */
+.project_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.project_tags span {
+    background-color: #3a3a3a;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 4px 14px;
+}
+/* Project image */
+.project_image {
+    width: 50%;
+}
+.project_image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contact 섹션 */
+.contact {
+    position: relative;                                  /* 절대 위치 기준, Sticker를 Contact 섹션 기준으로 배치하기 위해 설정 */
+    display: flex;
+    flex-direction: column;                              /* 세로 방향 배치 */
+    justify-content: center;                             /* 수직 중앙 정렬 */
+    align-items: center;                                 /* 수평 중앙 정렬 */
+    text-align: center;                                  /* 텍스트 중앙 정렬 */
+    padding: 180px 20px;
+}
+/* Contact 메인 문구 */
+.contact h2 {
+    font-family: "Anton", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0;
+}
+.contact p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 32px 0 0;
+}
+/* 문의하기 버튼 */
+.portfolio_btn {
+    display: inline-block;
+    color: #ffffff;
+    font-family: "Anton", sans-serif;
+    font-size: 36px;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 999px;
+    padding: 18px 36px;
+    margin-top: 48px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.portfolio_btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+/* Sticker 이미지 공통 */
+.contact_sticker {
+    position: absolute;                                  /* 부모(contact) 기준, Figma의 Ignore Auto Layout / Absolute positive 유사 */
+    width: 110px;
+    height: auto;
+}
+.blue {
+    left: 18%;
+    bottom: 100px;
+}
+.red {
+    right: 9%;
+    top: 130px;
+    transform: rotate(24deg);
+}
+
+/* Footer 섹션 */
+.footer {
+    background-color: #baff00;
+    color: #000000;
+    padding: 56px 40px 24px;
+}
+.footer_info h2 {
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+.footer_info p {
+    font-size: 13px;
+    margin: 6px 0;
+}
+/* 구분선 */
+.footer_line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 48px 0 32px;
+}
+/* 하단 영역 (저작권과 태그) */
+.footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;                                 /* 수평 중앙 정렬 */
+}
+/* 저작권 문구 */
+.footer_bottom p {
+    font-size: 12px;
+    margin: 0;
+}
+/* 태그 */
+.footer_tags {
+    display: flex;
+    gap: 8px;
+}
+.footer_tags span {
+    background-color: #000000;
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 8px 14px;
+}
+.footer_logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 24px;
+}
+
+/* Custom Cursor */
+/* Cursor를 따라다니는 흰색 원 */
+.cursor {
+    position: fixed;                                      /* 브라우저 화면 기준으로 위치 고정 */
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    background-color: #ffffff;
+    border-radius: 50%;                                  /* 정사각형으로 원을 만듦 */
+    pointer-events: none;                                /* 마우스 이벤트 방해하지 않음 */
+    transform: translate(-50%, -50%);                    /* 정중앙 정렬, 원의 중심이 실제 마우스 위치에 오도록 조정 */
+    mix-blend-mode: difference;                          /* 배경을 반전시켜 검은 배경에서 흰색으로 보이게 함 */  
+    z-index: 9999;                                       /* 맨 위로 */
+    transition: width 0.3s ease, height 0.3s ease;       /* 부드러운 변화 */
+}
+
+/* (링크 / 버튼 위에 있을 때 커서 크기 변화 */
+.cursor.cursor_active {
+    width: 70px;
+    height: 70px;
+}
